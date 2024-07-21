@@ -17,7 +17,7 @@ chrome.runtime.onInstalled.addListener(() => {
   });
   
   function calculatePercentage(selectedText) {
-	const cleanedText = selectedText.replace(/,/g, ''); // Remove commas
+	const cleanedText = selectedText.replace(/[$¤؋৻฿₡₤₧¢¥৲૱៛₢₥₨£֏৳௹₠₣₦₩₪₭₰₳₶₹₼₿₫₮₱₴₷₺₽﷼€₯₲₵₸₻₾,]/g, ''); // Remove commas
 	const number = parseFloat(cleanedText);
 	if (isNaN(number)) {
 	  alert("Selected text is not a number");
