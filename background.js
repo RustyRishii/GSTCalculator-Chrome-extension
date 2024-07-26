@@ -17,19 +17,22 @@ chrome.runtime.onInstalled.addListener(() => {
   });
   
   function calculatePercentage(selectedText) {
-	const cleanedText = selectedText.replace(/[$¤؋৻฿₡₤₧¢¥৲૱៛₢₥₨£֏৳௹₠₣₦₩₪₭₰₳₶₹₼₿₫₮₱₴₷₺₽﷼€₯₲₵₸₻₾,]/g, ''); // Remove commas
+	const cleanedText = selectedText.replace(/[$¤؋৻฿₡₤₧¢¥৲૱៛₢₥₨£֏৳௹₠₣₦₩₪₭₰₳₶₹₼₿₫₮₱₴₷₺₽﷼€₯₲₵₸₻₾,]/g, ''); //Remove currencies and commas
 	const number = parseFloat(cleanedText);
 	if (isNaN(number)) {
 	  alert("Selected text is not a number");
 	  return;
 	}
-  
+	
+    //5%
 	const add5 = number + (number * 0.05);
 	const sub5 = number - (number * 0.05);
   
+	//18%
 	const add18 = number + (number * 0.18);
 	const sub18 = number - (number * 0.18);
   
+	//28%
 	const add28 = number + (number * 0.28);
 	const sub28 = number - (number * 0.28);
   
